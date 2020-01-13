@@ -1,0 +1,35 @@
+{
+    "compilerOptions": {
+        // 输出文件目录
+        "outDir": "./public/",
+        "rootDirs": ["./src"],
+        "baseUrl": ".",
+        // 在设定了 baseUrl 之后，用来 限定如何解析 路径
+        "paths": {
+            "@/*": ["./src/*"]
+        },
+        // 不能是隐式的any
+        "noImplicitAny": true,
+        "module": "commonjs",
+        "target": "es5",
+        "jsx": "react",
+        "lib": ["es5", "dom", "ScriptHost"],
+        "allowJs": true,
+        // 严格不能为空
+        "strictNullChecks": true,
+        // 使用 tslib 减少冗余的辅助函数
+        "importHelpers": true,
+        // 不允许没有使用的本地变量
+        "noUnusedLocals": true,
+        // 不允许 没有类型的返回
+        "noImplicitReturns": true,
+        // 不允许没有类型的this
+        "noImplicitThis": true,
+
+        "esModuleInterop": true
+    },
+    // 只去转换src下面的文件
+    "include": ["src/**/*"],
+    // node_modules public忽略
+    "exclude": ["node_modules", "public"]
+}

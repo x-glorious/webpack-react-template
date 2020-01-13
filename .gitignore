@@ -1,0 +1,7 @@
+# Dependency directories
+node_modules/
+.cache/
+public/css
+public/js
+public/index.html
+public/favicon.ico

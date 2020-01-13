@@ -1,0 +1,70 @@
+.scene {
+    $boxSize: 24px;
+    $borderSize: 1px;
+    perspective: $boxSize * 100;
+    perspective-origin: 50% 50%;
+    width: $boxSize;
+    height: $boxSize;
+
+    margin: {
+        top: 100px;
+        left: 100px;
+    }
+
+    @keyframes cube-rotate {
+        0% {
+            transform: translateZ(-$boxSize/2) rotateY(45deg) rotateX(10deg) rotateZ(10deg);
+        }
+
+        100% {
+            transform: translateZ(-$boxSize/2) rotateY(45deg + 360deg) rotateX(10deg + 360deg) rotateZ(10deg + 360deg);
+        }
+    }
+
+    .cube {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transform: translateZ(-$boxSize/2) rotateY(45deg) rotateX(10deg) rotateZ(10deg);
+        animation: cube-rotate 2s ease-in-out reverse infinite;
+    }
+
+    .front,
+    .back,
+    .left,
+    .right,
+    .top,
+    .bottom {
+        background: radial-gradient(rgba($color:#9E9E9E, $alpha: 0.1), rgba($color:#9E9E9E, $alpha: 0.5));
+        width: $boxSize;
+        height: $boxSize;
+        position: absolute;
+        border: $borderSize solid rgba($color:#9E9E9E, $alpha: 0.5);
+        box-sizing: border-box;
+    }
+
+    .front {
+        transform: rotateY(0deg) translateZ($boxSize/2);
+    }
+
+    .right {
+        transform: rotateY(90deg) translateZ($boxSize/2);
+    }
+
+    .back {
+        transform: rotateY(180deg) translateZ($boxSize/2);
+    }
+
+    .left {
+        transform: rotateY(-90deg) translateZ($boxSize/2);
+    }
+
+    .top {
+        transform: rotateX(90deg) translateZ($boxSize/2);
+    }
+
+    .bottom {
+        transform: rotateX(-90deg) translateZ($boxSize/2);
+    }
+}
