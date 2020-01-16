@@ -12,7 +12,9 @@
     box-sizing: border-box;
 }
 
-:global(*, ::after, ::before) {
+:global(*),
+:global(::after),
+:global(::before) {
     box-sizing: inherit;
 }
 
@@ -24,7 +26,5 @@
         right: 0px;
     }
 
-    font-family: 'Lucida Console',
-    Monaco,
-    monospace;
+    font-family: 'Lucida Console', Monaco, monospace;
 }
